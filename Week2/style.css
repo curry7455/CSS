@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+div{
+    color:deeppink;
+}
+
+#bob{
+    color:blueviolet;
+}
+#orange{
+    color:orangered
+
+}
+input[type="text"]
+{
+    background-color:yellow
+}
+a:link{
+    color:cornflowerblue
+}
+a:visited{
+    color:coral
+}
+a:hover{
+    color:blue;
+    transition: all 1s;
+}
+a:active{
+    color:burlywood
+}
+#bob::before{
+    content:"my name is bob"
+}
