@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 Javascript Examples</title>
+</head>
+<body>
+    <h1 id="header">JavaScript Examples</h1>
+    <button>Do A Magic Trick</button>
+    <button id="promptButton">Push The Button</button>
+    <!--In document JavaScript Examples-->
+    <script>
+        //example of regular string
+        var name = "Kerri"
+        var lastName = "Wilkinson"
+        //example of string literal
+        //var message = `Hello, welcome to the JavaScript lesson ${name}`;
+        //console.log(message);
+        //alert(message);
+        //example of string concatenation
+        var message2 = "Hello " + name + " " + lastName + ", welcome to the JavaScript lesson!"
+        console.log(message2);
+        outputToConsole(message2);
+
+        var addProblem = 12 + 4;
+        console.log(addProblem)
+
+        function outputToConsole(data){
+            console.log(data);
+        }
+        //document.getElementById("header").innerHTML = message2;
+        var myButton = document.querySelector("button");
+        //add an event listener to the button
+        myButton.addEventListener("click", changePage);
+        function changePage(){
+        document.querySelector("h1").innerHTML = message2;
+        document.querySelector("body").style.backgroundColor = "#ff0000";}
+
+        var yourName = prompt("Please enter your name: ");
+        document.querySelector('h1').innerHTML = `Hello ${yourName}, nice to meet you!`;
+
+        var dataPromptButton = document.getElementById("promptButton")
+        dataPromptButton.addEventListener('click', dataPrompt)
+
+        function dataPrompt(){
+            alert(`My name is ${name}`);
+            var yourName = prompt ("Please tell me your name.");
+            alert(`Hello ${yourName}, Nice to meet you.`);
+
+            var yourLastName = prompt("Please tell me your last name.");
+            alert(`Great!, your name is ${yourName} ${yourLastName}!`);
+
+            var firstNumber = prompt("Let's add some numbers. Enter the first number: ");
+            var secondNumber = prompt("Now enter a second number: ");
+
+            var result = Number(firstNumber) + Number(secondNumber);
+
+            alert(`The sum of the two numbers is ${result}`);
+
+            var documentBody = document.querySelector('body');
+
+            var outputData = document.createElement('p');
+
+            outputData.innerHTML = `Your name is ${yourName} ${yourLastName}<br>The sum of your numbers is ${result}<br>Thanks from ${name} ${lastName}`;
+            documentBody.appendChild(outputData)
+        }
+
+
+        </script>
+</body>
+</html>

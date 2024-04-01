@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Week 2 Files</title>
+<style type="text/css">
+    .border { border: 1px solid black; }
+</style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var people = [
+            {first:"Jason", last:"Vorhees", credit:"Friday the 13th"},
+            {first:"Freddy", last:"Krueger", credit:"A Nightmare on Elm Street"},
+            {first:"Roger", last:"Rabbit", credit:"Who Framed Roger Rabbit"},
+            {first:"Kevin", last:"McCallister", credit:"Home Alone"},
+            {first:"Godzilla", last:"King of The Monsters", credit:"Godzilla"},
+            {first:"Buzz", last:"Lightyear", credit:"Toy Story"},
+            {first:"Marion", last:"Cobretti", credit:"Cobra"}
+        ];
+
+        // Loop through the people array and create div elements for each character
+        for (var i = 0; i < people.length; i++) {
+            var character = people[i];
+
+            // Create a new div element
+            var div = document.createElement("div");
+
+            // Add class "border" to the div using dot syntax
+            div.classList.add("border");
+
+            // Set id for the div using setAttribute method
+            div.setAttribute("id", "character" + (i + 1));
+
+            // Create paragraph elements for first name, last name, and credit
+            var firstName = document.createElement("p");
+            firstName.textContent = "First Name: " + character.first;
+            var lastName = document.createElement("p");
+            lastName.textContent = "Last Name: " + character.last;
+            var credit = document.createElement("p");
+            credit.textContent = "Credit: " + character.credit;
+
+            // Append paragraph elements to the div
+            div.appendChild(firstName);
+            div.appendChild(lastName);
+            div.appendChild(credit);
+
+            // Append the div to the body of the document
+            document.body.appendChild(div);
+        }
+    </script>
+	<a href="../index.html">Homepage!!!</a>
+</body>
+</html>

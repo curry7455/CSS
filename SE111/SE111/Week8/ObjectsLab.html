@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 Lab | Ojects</title>
+</head>
+<body>
+    <h1>Week 8 Lab | Objects</h1>
+    <script>
+        //One example of how to create an array
+        var cars = new Array();
+        cars[0] = "Toyota";
+        cars[1] = "Honda";
+        cars[2] = "Ford";
+        cars[3] = "Subaru";
+        cars[4] = "Porsche";
+        cars[5] = "Volkswagen";
+
+        console.log(cars[3]);
+
+        //Example of a for loop
+        for(let i = 0; i<cars.length; i++){
+            console.log(cars[i]);
+        }
+
+        var people = [
+            "Sam",
+            "Kerri",
+            "Tyler",
+            "Richard",
+            "Christina",
+            "Nate"];
+
+            console.log(people);
+
+            // people.push("Jordan");
+            // //Jordan in, Jordan out 
+            // console.log(people);
+            // people.pop();
+
+            // console.log(people);
+            // people.splice(3,2);
+
+            console.log(people);
+
+            var colors = ["green", "black", "blue", "red", "yellow", "blue"];
+
+            //Parallel arrays - each name object has a partner color object
+            for(let i=0; i<people.length; i++){
+                console.log(`${people[i]}'s favorite color is ${colors[i]}`)
+            }
+            //Associative Arrays
+            var sportsTeam = []
+            sportsTeam["Baseball"] = "Red Socks";
+            sportsTeam["Hockey"] = "Bruins";
+            sportsTeam["Basketball"] = "Celtics";
+            sportsTeam["Baseball"] = "Patriots";
+
+            console.log(sportsTeam["Basketball"]);
+
+            //Two Dimensional Array
+            var vehicles = []
+            vehicles[0] = ["Make", "Toyota", "Honda", "Ford"]
+            vehicles[1] = ["Model", "Camry", "Honda", "Taurus"]
+            vehicles[2] = ["Year", "2010", "2015", "2017", "2000"]
+            
+            for(let i = 0; i<vehicles.length; i++){
+                for(let j = 0; j<vehicles[i].length; j++){
+                console.log()(vehicles[i][j]);}
+            }
+
+            var character = {
+                class: "Plumber",
+                name:"Mario",
+                hasMustache:true,
+                hasPlunger:true,
+                jumpHeight:10,
+                hasHat:true
+            }
+                
+            var character = {
+                class: "Princess",
+                name: "Peach",
+                hasMustache:false,
+                hasPlunger:false,
+                jumpHeight:7,
+                hasHat:false,
+                hasCrown:true
+            }   
+            var character = {
+                class: "Plumber",
+                name:"Luigi",
+                hasMustache:true,
+                hasPlunger:true,
+                jumpHeight:10,
+                hasHat:true,
+                hasCrown:false
+            }
+
+                
+            var character = {
+                class: "Villain",
+                name:"Bowser",
+                hasMustache:false,
+                hasPlunger:false,
+                jumpHeight:30,
+                hasHat:false,
+                hasCrown:false
+            }
+            
+            characters.forEach(function(item, character){
+                console.log(item.name, item.class, item.hasMustache, character)
+
+            })
+            var characters = [character1, character2, character3, character4];
+
+            for(let key in characters){
+                console.log(characters[key].class, characters[key].name, characters[key].hasMustache);
+            }
+                </script>
+</body>
+</html>

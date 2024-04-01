@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Calculator</title>
+</head>
+<body>
+    <script>
+        var defaultHourlyPay = 14.50;
+        var defaultHoursWorkedPerWeek = 32;
+
+        var hourlyPayInput = prompt("Enter your hourly pay rate ($" + defaultHourlyPay + "):");
+        var hourlyPay = hourlyPayInput ? Number(hourlyPayInput) : defaultHourlyPay;
+
+        var hoursWorkedPerWeekInput = prompt("Enter your hours worked per week (" + defaultHoursWorkedPerWeek + "):");
+        var hoursWorkedPerWeek = hoursWorkedPerWeekInput ? Number(hoursWorkedPerWeekInput) : defaultHoursWorkedPerWeek;
+
+        var taxRate = 0.20; 
+
+        var grossPay = hourlyPay * hoursWorkedPerWeek * 2;
+        var taxAmount = grossPay * taxRate;
+        var netPay = grossPay - taxAmount;
+
+        console.log("Gross Pay: $" + grossPay.toFixed(2));
+        console.log("Amount Paid in Taxes: $" + taxAmount.toFixed(2));
+        console.log("Net Pay: $" + netPay.toFixed(2));
+
+        alert("Gross Pay: $" + grossPay.toFixed(2) + "\nAmount Paid in Taxes: $" + taxAmount.toFixed(2) + "\nNet Pay: $" + netPay.toFixed(2));
+        
+    </script>
+    <a href="../index.html">Homepage!!!</a>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Town of Springfield</title>
+    <style>
+        #main{
+            width: 1000px; height: 800px; background-color: aliceblue; border: 1px solid black;
+        }
+        body, html{
+            display: flex;
+            justify-content: center;
+            background-color: cadetblue;
+            margin: 0;
+        }
+        #header{
+            text-align: center;
+            font-family: 'Courier New', Courier, monosprace;
+        }
+        #nav{
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+        .nav-list{
+            list-style: none;
+            display: inline;
+            text-align: center;
+            padding: 15px;
+        }
+        #content{
+            height: 600px;
+        }
+        #footer{
+            font-family:'Courier New', Courier, monospace;
+            text-align: center;
+            border-top: 1px solid black;
+        }
+        #section-header{
+            padding-left: 25px;
+
+        }
+        .section-text{
+            width: 580px; float: left; padding-left: 20px;}
+            .section-image{
+                float: left;
+                padding-right: 20px
+
+            }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <h1>Town of Springfield</h1>
+        </div>
+        <!--Navigation Area-->
+        <div id="nav">
+            <ul>
+                <li class="nav-list"><a href="#">Home</a></li>
+                <li class="nav-list"><a href="#"></a><a href="#">About Springfield</a></li>
+                <li class="nav-list"><a href="#"></a><a href="#">Pictures of Springfield</a></li>
+                <li class="nav-list"><a href="#"></a><a href="#">Contact Springfield</a></li>
+            </ul>
+        </div>
+        <!--Content Area-->
+        <div id="content">
+            <!--Content Goes Here!-->
+            <h2 id="section-header">Welcome to the Town of Springfield Homepage!</h2>
+            <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda rem, suscipit molestias cupiditate dolor deserunt nobis incidunt corporis quis pariatur consectetur quibusdam aut accusantium architecto maiores quisquam quos nisi voluptate!</p>
+            <img class="section-image" src="images/Springfield_(The_Simpsons).png" alt="Picture of Springfield">
+        </div>
+        <div id="footer">
+            <p>&copy;HTML/JavaScript NEIT Winter 2024 and Town of Springfield</p>
+        </div>
+
+
+    </div>
+</body>
+</html>
