@@ -1,69 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            background-color: #f8f8f0;}
-        .hide{
-            display:none;
-        }
-
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kerri Wilkinson</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Kerri Wilkinson</h1>
-    <hr>
-    <div id="nav">
-        <a href="#">Bio</a>
-        <a href="#">Education</a>
-        <a href="#">Hobbies</a>
+  <h1>Kerri Wilkinson</h1>
+  <hr>
+  <div id="nav">
+    <a href="#Bio">Bio</a>
+    <a href="#Edu">Education</a>
+    <a href="#Hobbies">Hobbies</a>
+  </div>
+  <div id="main">
+    <div id="bio" class="section"><img src="images/henryandmom.PNG" alt="Me"> <img src="images/thekids.PNG" alt="My three babies">
+      <h2>My Bio</h2>
+      <p>I am <strong>Kerri Wilkinson</strong>, a strong, independent person who loves watching movies and food and naps during thunderstorms. I live in Barrington with my three children and my cat, Harvey.<em>Committment</em> is what drives me forward, and I always strive to be the best version of myself I can be. My kids are absolutely the most important thing in my life. Being a single mom defines a lot of my values and goals and being with them is the main reason I chose to go back to school at 36. 
+        <p>My oldest daughter, Izzy, is 14. She loves to read, she's a talented artist, and she knows everything there is to know about animals. When she grows up she wants to study animal behavior, especially the behavior of birds. She is ridiculously smart, funny as heck, and she is such a good big sister.</p>
+        <p>Henry, who is 8 years old, has so much charisma and charm. He makes friends everywhere he goes. I call him my partner in crime. He and I play a lot of video games together. He is naturally great at math. He is the most loving brother that any sibling could ask for.</p>
+        <p>Ellie, who is 3 and a half, is the baby of the family. She is so full of joy and has the most amazing giggle you've ever heard. It is literally impossible not to smile when she talks to you. She is bubbly and fun and sassy. She loves the water so much, Izzy used to say we should have put her in an aquarium instead of a crib. She loves music, dancing, painting, and her big brother and sister.</p>
     </div>
-    <div id="main">
-        <div id="bio" class="section">
-            <h2>My Bio</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque earum, culpa explicabo sit <b>commodi</b> ea neque voluptatum inventore ratione iste magnam reiciendis, beatae aut assumenda quod aliquam itaque officiis animi!</p>
-        </div>
-        <div id="ed" class="section hide">
-            <h2>Education</h2>
-            <p>Lorem ipsum dolor sit amet <i>consectetur</i> adipisicing elit. Cupiditate repudiandae quis atque vitae consequuntur quibusdam officia fugit beatae laboriosam magnam optio error, impedit ea distinctio incidunt? Ea iste magnam vero?</p>
-        </div>
-        <div id="hobbies" class="section hide">
-            <h2>Hobbies</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur <em>adipisicing</em> elit. Ab in impedit error quas deserunt odio perspiciatis dolorem consequuntur id adipisci, beatae optio nihil, laboriosam aspernatur officiis <u>officia</u> recusandae! Earum, reiciendis!</p>
-        </div>
+    <div id="ed" class="section hide">
+      <h2>Education</h2>
+      <p>I grew up in Houston, Texas and went to public school there, but I attended my last year of high school at Smithfield High School in Rhode Island. After a few years I attended Quincy College for Licensed Practical Nursing. I was a nurse for several years when I started studying Business Management at Massasoit Community College in Brockton, MA. I was almost done with my degree when I found out I was expecting my son, so I took a break from school again. A few years and several babies later, I am finally at NEIT for Software Engingeering. </p>
     </div>
-    <hr>
-    <div id="footer">
-        &copy; Kerri Wilkinson | W1 Assignment
+    <div id="hobbies" class="section hide">
+      <h2>Hobbies</h2>
+      <p>Most of my free time is spent either doing homework or hanging out with my three kids. They are my best friends. When I want to unwind, you can often find me cleaning up after one of the many living things in my apartment, studying, or watching some crime drama, horror movie, psychological thriller, or picking just a random movie and trying it out. I am a total cinephile.</p>
     </div>
+  </div>
+ 
+  <hr>
+  <div id="footer">
+    &copy; Kerri Wilkinson | W1 Assignment
+  </div>
 
+  <script>
+    var a = Array.from(document.querySelectorAll(`a`));
+    var div = document.querySelectorAll(`.section`);
+    console.log(a)
+    for (var i = 0; i < a.length; i++) {
+      a[i].addEventListener(`click`, press)
+    }
 
-    <script>
-        var a = Array.from(document.querySelectorAll(`a`));
-        var div = document.querySelectorAll(`.section`);
-        console.log(a)     
-        for(var i=0; i<a.length; i++)
-        {
-            a[i].addEventListener(`click`, press)
-        }
-        function press(e)
-        {
-
-            e.preventDefault()
-            var index = a.indexOf(e.target)
-            for(var i=0; i<a.length; i++)
-            {
-                div[i].classList.add(`hide`)
-            }
-            div[index].classList.remove(`hide`)
-            
-        }
-        
-    </script>
+    function press(e) {
+      e.preventDefault()
+      var index = a.indexOf(e.target)
+      for (var i = 0; i < a.length; i++) {
+        div[i].classList.add(`hide`)
+      }
+      div[index].classList.remove(`hide`)
+    }
+  </script>
 </body>
+
 </html>

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+html, body{
+    background-color: chartreuse;
+}
+main{
+    display:grid;
+    background-color:gray;
+}
+header{
+    background-color:#18da59;
+}
+nav, footer{
+    background-color:black;
+#middle{
+    background-color: palevioletred;
+}
+}
+section{
+    display:grid;
+    background-color: aliceblue;
+}
+article{
+    background-color: blueviolet;
+}
+div{
+    display:grid;
+    background-color:darkred
+}
