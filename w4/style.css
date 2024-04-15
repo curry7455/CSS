@@ -1,0 +1,21 @@
+@charset "UTF-8";
+html{
+    height:100%;
+}
+body{
+    height:100%;
+    margin:0;
+}
+main{
+    display:flex;
+    background-color: blue;
+    padding:20px;
+    height:50%;
+    flex-direction:row
+}
+div{
+    width:500px;
+    height:200px;
+    background-color:blueviolet;
+    border:2px solid black;
+}

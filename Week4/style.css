@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30;
+}
+
+.container {
+    border: 2px solid #333;
+    padding: 10px;
+}
+
+h1 {
+    text-align: left;
+    border: 2px solid #333;
+    padding: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr space-between 1fr space-between 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    border: 2px solid #333;
+    padding: 10px;
+}
+
+.grid-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.item1 {
+    grid-column: span 3;
+    grid-row: span 2;
+    background-color: lightblue;
+}
+
+
