@@ -1,0 +1,16 @@
+@charset "UTF-8";
+main{
+    display:flex;
+    width:1820px;
+    height:1080px;
+    background-color: gray;
+}
+h1{
+    display:flex;
+    justify-content:space-between;
+    align-items: baseline;
+    width:1820px;
+    height:100px;
+    font:Teko;
+    font-size:48px;
+}
