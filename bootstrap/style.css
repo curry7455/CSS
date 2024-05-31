@@ -1,0 +1,173 @@
+@media screen {
+  .banner,
+  .container-1,
+  .container-2,
+  .container-3,
+  .bottom-column,
+  .project-card,
+  .featured-project-box {
+    box-shadow: 10px 10px 20px rgba(202, 197, 197, 0.7); /* Added drop shadow */
+  }
+}
+
+body {
+  font-family: Tajawal, Arial;
+  background-image: url('images/wallpaper2you_285299.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: antiquewhite; 
+}
+
+header,
+footer {
+  background-color: rgba(61, 61, 61, 0.274); 
+}
+
+.banner {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); 
+  font-family: 'Amatic SC', cursive; 
+}
+
+.banner .display-4 {
+  font-size: 122px; 
+}
+
+.banner .small-text {
+  font-size: 14px; 
+  margin: 0;
+}
+
+.btn-contact {
+  font-size: 18px;
+  padding: 5px 15px; 
+  background-color: black;
+  border: 1px solid antiquewhite;
+  color: antiquewhite; 
+}
+
+.container-1,
+.container-2,
+.container-3,
+.bottom-column {
+  background-color: rgba(0, 0, 0, 0.7); 
+  text-align: center;
+  color: antiquewhite;
+  transition: color 0.3s ease-in-out;
+}
+
+.top-column {
+  height: 500px;
+  background-image: url('images/dark.jpg');
+}
+
+footer p {
+  margin: 0;
+}
+
+.text-red {
+  color:antiquewhite !important; 
+}
+
+.featured-link {
+  display: block;
+  color: antiquewhite; 
+  text-decoration: none;
+}
+
+.featured-title {
+  font-size: 24px; 
+}
+
+.featured-image {
+  width: 95%; 
+  transition: transform 0.3s ease-in-out;
+}
+
+.featured-link:hover .featured-image {
+  transform: scale(1.1); 
+}
+
+.social-icons img {
+  width: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.project-title {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 122px;
+  color: antiquewhite;
+  margin-top: 20px;
+}
+
+.project-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  text-align: center;
+  color: antiquewhite;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-card h4 {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.project-card .project-date {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.project-card .btn {
+  font-size: 14px;
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: black;
+  border: 1px solid antiquewhite;
+  color: antiquewhite; 
+}
+
+.featured-project-title {
+  font-family: 'Amatic SC', cursive;
+  font-size: 48px;
+  color: antiquewhite;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.featured-project-box {
+  border: 5px solid black;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.7);
+  background-color: black;
+}
+
+.featured-project-image {
+  width: 100%;
+}
+
+.container-1 h3 a,
+.container-2 h3 a {
+  color: antiquewhite;
+  transition: color 0.3s ease-in-out;
+}
+
+.container-1 h3 a:hover,
+.container-2 h3 a:hover {
+  color: rgb(196, 2, 2);
+}
+.black-bg {
+  background-color: black; /* Added black background color */
+}

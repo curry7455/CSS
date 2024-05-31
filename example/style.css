@@ -1,0 +1,60 @@
+/* Custom styles for the portfolio website */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('path/to/your/hero-image.jpg') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    color: rgb(221, 211, 211);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Bio Section */
+.bio {
+    background-color: #d6e7f8;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Project Cards */
+.card {
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background
