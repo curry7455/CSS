@@ -10,52 +10,38 @@ player[0] = new Player('Player 1', new Box(50, c.height / 2, 20, 100, 'rgba(255,
 player[1] = new Player('Player 2', new Box(c.width - 50, c.height / 2, 20, 100, 'rgba(255, 0, 0)'));
 
 // Existing ball initialization
-ball = new GameObject(c.width / 2, c.height / 2, 20, 20, 'rgba(25, 25, 25)');
+let ball = new GameObject(c.width / 2, c.height / 2, 20, 20, 'rgba(25, 25, 25)');
 
 // Query selectors for the score divs
 const scoreDivs = document.querySelectorAll('#score div');
 
-// Example game loop
 function gameLoop() {
-    // Debugging output for positions
-    console.log('Paddle 1 position:', player[0].pad.x, player[0].pad.y);
-    console.log('Paddle 2 position:', player[1].pad.x, player[1].pad.y);
-    console.log('Ball position:', ball.x, ball.y);
-
-    // Handle player input
-    handleInput();
-
-    // Clear canvas for next frame
+    handleInput(); 
     ctx.clearRect(0, 0, c.width, c.height);
 
-    // Update and render players' paddles
-    player[0].pad.move();
-    player[1].pad.move();
+    // Update and render players' paddles using a for loop
+    for (let i = 0; i < player.length; i++) {
+        player[i].pad.move();
+        constrainPaddles(player[i].pad);
+    }
 
-    // Constrain paddles within the canvas
-    constrainPaddles(player[0].pad);
-    constrainPaddles(player[1].pad);
-
-    // Ball movement and collision handling
-    ball.move();
+    // Ball movement 
+    ball.move()
     handleBallCollisionWithWalls();
 
-    // Ball collision with paddles and scoring
-    if (collide(ball, player[0].pad)) {
-        ball.vx = Math.abs(ball.vx);
-        ball.x = player[0].pad.x + player[0].pad.w / 2 + ball.w / 2;
-        generateParticles(ball, ball.x, ball.y);
+    // Ball collision with paddles and scoring 
+    for (let i = 0; i < player.length; i++) {
+        if (collide(ball, player[i].pad)) {
+            ball.vx = i === 0 ? Math.abs(ball.vx) : -Math.abs(ball.vx);
+            ball.x = i === 0 ? player[i].pad.x + player[i].pad.w / 2 + ball.w / 2 : player[i].pad.x - player[i].pad.w / 2 - ball.w / 2;
+            generateParticles(ball, ball.x, ball.y);
+        }
     }
 
-    if (collide(ball, player[1].pad)) {
-        ball.vx = -Math.abs(ball.vx);
-        ball.x = player[1].pad.x - player[1].pad.w / 2 - ball.w / 2;
-        generateParticles(ball, ball.x, ball.y);
+    // Render paddles, ball, and particle
+    for (let i = 0; i < player.length; i++) {
+        player[i].pad.render();
     }
-
-    // Render paddles, ball, and particles
-    player[0].pad.render();
-    player[1].pad.render();
     ball.render();
     renderParticles();
 
@@ -63,14 +49,13 @@ function gameLoop() {
     scoreDivs[0].innerText = player[0].score;
     scoreDivs[1].innerText = player[1].score;
 
-    // Request the next frame
     requestAnimationFrame(gameLoop);
 }
 
-// Start the game loop
+// Start the game 
 gameLoop();
 
-// Function to constrain paddles within the canvas
+// Function to constrain paddles
 function constrainPaddles(pad) {
     if (pad.y - pad.h / 2 < 0) {
         pad.y = pad.h / 2;
@@ -99,12 +84,12 @@ function handleBallCollisionWithWalls() {
 function resetBall() {
     ball.x = c.width / 2;
     ball.y = c.height / 2;
-    ball.vx = 5; // Set initial velocity for the ball
-    ball.vy = 3;
+    ball.vx = (Math.random() > 0.5 ? 1 : -1) * 5;
+    ball.vy = (Math.random() * 4) - 2;
 }
 
 // Function to detect collision between two objects
-let particles = []; // Add this at the top
+let particles = []; 
 
 function generateParticles(ball, x, y) {
     const particleCount = 20;
@@ -131,9 +116,10 @@ function renderParticles() {
         p.life -= 1;
     });
 
-    particles = particles.filter(p => p.life > 0); // Update global particles
+    particles = particles.filter(p => p.life > 0); 
 }
 
+// Function to handle input)
 function handleInput() {
     if (keys['w']) {
         player[0].pad.vy = -5;
@@ -150,12 +136,4 @@ function handleInput() {
     } else {
         player[1].pad.vy = 0;
     }
-}
-
-// Function to detect collision between two objects
-function collide(obj1, obj2) {
-    return !(obj1.x + obj1.w / 2 < obj2.x - obj2.w / 2 ||
-             obj1.x - obj1.w / 2 > obj2.x + obj2.w / 2 ||
-             obj1.y + obj1.h / 2 < obj2.y - obj2.h / 2 ||
-             obj1.y - obj1.h / 2 > obj2.y + obj2.h / 2);
 }
