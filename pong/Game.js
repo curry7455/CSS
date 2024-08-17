@@ -2,15 +2,25 @@
 const c = document.getElementById('gameCanvas');
 const ctx = c.getContext('2d');
 
+// Define the keys object to handle input
+let keys = {};
+
+// Listen for keydown and keyup events
+window.addEventListener('keydown', (e) => {
+    keys[e.key] = true;
+});
+
+window.addEventListener('keyup', (e) => {
+    keys[e.key] = false;
+});
+
 // Declare the player array
 let player = [];
+player[0] = new Player('Player 1', new Box(50, c.height / 2, 20, 100, 'rgba(255, 0, 0, 1)'));
+player[1] = new Player('Player 2', new Box(c.width - 50, c.height / 2, 20, 100, 'rgba(255, 0, 0, 1)'));
 
-// Add new Player instances to the array
-player[0] = new Player('Player 1', new Box(50, c.height / 2, 20, 100, 'rgba(255, 0, 0)'));
-player[1] = new Player('Player 2', new Box(c.width - 50, c.height / 2, 20, 100, 'rgba(255, 0, 0)'));
-
-// Existing ball initialization
-let ball = new GameObject(c.width / 2, c.height / 2, 20, 20, 'rgba(25, 25, 25)');
+// Initialize the ball
+let ball = new GameObject(c.width / 2, c.height / 2, 20, 20, 'rgba(25, 25, 25, 1)');
 
 // Query selectors for the score divs
 const scoreDivs = document.querySelectorAll('#score div');
@@ -19,17 +29,20 @@ function gameLoop() {
     handleInput(); 
     ctx.clearRect(0, 0, c.width, c.height);
 
-    // Update and render players' paddles using a for loop
     for (let i = 0; i < player.length; i++) {
         player[i].pad.move();
         constrainPaddles(player[i].pad);
+        player[i].pad.render();
     }
 
-    // Ball movement 
-    ball.move()
+    // Update and render the ball
+    ball.move();
     handleBallCollisionWithWalls();
+    ball.render();
 
-    // Ball collision with paddles and scoring 
+    renderParticles();
+
+    // Ball collision with paddles and scoring
     for (let i = 0; i < player.length; i++) {
         if (collide(ball, player[i].pad)) {
             ball.vx = i === 0 ? Math.abs(ball.vx) : -Math.abs(ball.vx);
@@ -38,13 +51,6 @@ function gameLoop() {
         }
     }
 
-    // Render paddles, ball, and particle
-    for (let i = 0; i < player.length; i++) {
-        player[i].pad.render();
-    }
-    ball.render();
-    renderParticles();
-
     // Update the scores in the HTML
     scoreDivs[0].innerText = player[0].score;
     scoreDivs[1].innerText = player[1].score;
@@ -52,7 +58,7 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-// Start the game 
+// Start the game
 gameLoop();
 
 // Function to constrain paddles
@@ -71,11 +77,9 @@ function handleBallCollisionWithWalls() {
     }
     if (ball.x - ball.w / 2 < 0) {
         player[1].score += 1;
-        console.log(`${player[0].score} | ${player[1].score}`);
         resetBall();
     } else if (ball.x + ball.w / 2 > c.width) {
         player[0].score += 1;
-        console.log(`${player[0].score} | ${player[1].score}`);
         resetBall();
     }
 }
@@ -88,9 +92,7 @@ function resetBall() {
     ball.vy = (Math.random() * 4) - 2;
 }
 
-// Function to detect collision between two objects
-let particles = []; 
-
+// Function to generate particles
 function generateParticles(ball, x, y) {
     const particleCount = 20;
     for (let i = 0; i < particleCount; i++) {
@@ -105,6 +107,7 @@ function generateParticles(ball, x, y) {
     }
 }
 
+// Function to render particles
 function renderParticles() {
     particles.forEach(p => {
         ctx.beginPath();
@@ -119,7 +122,7 @@ function renderParticles() {
     particles = particles.filter(p => p.life > 0); 
 }
 
-// Function to handle input)
+// Function to handle input
 function handleInput() {
     if (keys['w']) {
         player[0].pad.vy = -5;
