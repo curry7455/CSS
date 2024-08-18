@@ -13,34 +13,60 @@
             <div id="score">
                 <div>
                     <p class="score">0</p>
-                    <!--<p class="anim">0</p>-->
+                    
                 </div>
                 <div>
                     <p class="score">0</p>
-                    <!--<p class="anim">0</p>-->
+                    
                 </div>
             </div>
             <canvas id="pong" width="800" height="800"></canvas>
         </section>
-        <section id="options"></div>
+        <section id="options">
             <h2>Options</h2>
             <div class="sides">
                 <div class="op">
-                    <h2>Player 1</h2><div></div> <div></div>
-                    <label>FILL</label><input class="fill" type="color"><div class="output"></div>
-                    <label>STROKE</label><input class="stroke" type="color"><div class="output"></div>
-                    <label>UP</label><input class="u" type="text" maxlength="1"><div class="output"></div>
-                    <label>DOWN</label><input class="d" type="text" maxlength="1"><div class="output"></div>
-                    <label>STRAIGHT</label><input class="s" type="text" maxlength="1"><div class="output"></div>
+                    <h2>Player 1</h2>
+                    <label>FILL</label>
+                    <input class="fill" type="color">
+                    <div class="fill-output"></div>
+                    <label>STROKE</label>
+                    <input class="stroke" type="color">
+                    <div class="stroke-output"></div>
+                    <label>UP</label>
+                    <input class="u" type="text" maxlength="1">
+                    <div class="u-output"></div>
+                    <label>DOWN</label>
+                    <input class="d" type="text" maxlength="1">
+                    <div class="d-output"></div>
+                    <label>STRAIGHT</label>
+                    <input class="s" type="text" maxlength="1">
+                    <div class="s-output"></div>
                 </div>
                 <div class="op">
-                    <h2>Player 2</h2> <div></div><div class="output"></div>
-                    <label>FILL</label><input class="fill" type="color"><div class="output"></div>
-                    <label>STROKE</label><input class="stroke" type="color"><div class="output"></div>
-                    <label>UP</label><input class="u" type="text" maxlength="1"><div class="output"></div>
-                    <label>DOWN</label><input class="d" type="text" maxlength="1"><div class="output"></div>
-                    <label>STRAIGHT</label><input class="s" type="text" maxlength="1"><div class="output"></div>
+                    <h2>Player 2</h2>
+                    <label>FILL</label>
+                    <input class="fill" type="color">
+                    <div class="fill-output"></div>
+                    <label>STROKE</label>
+                    <input class="stroke" type="color">
+                    <div class="stroke-output"></div>
+                    <label>UP</label>
+                    <input class="u" type="text" maxlength="1">
+                    <div class="u-output"></div>
+                    <label>DOWN</label>
+                    <input class="d" type="text" maxlength="1">
+                    <div class="d-output"></div>
+                    <label>STRAIGHT</label>
+                    <input class="s" type="text" maxlength="1">
+                    <div class="s-output"></div>
                 </div>
+            </div>
+            
+            <div id="paddle-speed">
+                <label for="paddle-speed-input">Paddle Speed:</label>
+                <input type="range" id="paddle-speed-input" min="1" max="20" value="10">
+                <span id="paddle-speed-output">10</span>
             </div>
         </section>
     </main>
@@ -49,8 +75,5 @@
     <script src="js/keyboard.js"></script>
     <script src="js/pong.js"></script>
     <script src="js/options.js"></script>
-    
-        
- 
 </body>
 </html>
