@@ -4,6 +4,10 @@
     . show or hide the `.sides` div
 ---------*/
 var optionsHeader = document.querySelector("#options h2");
+
+// Select all fill inputs and input divs
+const fillInputs = document.querySelectorAll('input.fill');
+const outputDivs = document.querySelectorAll('.output');
 /*---------
     Program the two fill inputs to do the following:
     . Display the correct colors on the inputs and outputs and paddles    
@@ -13,9 +17,22 @@ var optionsHeader = document.querySelector("#options h2");
         . Show the fill's hex code in the output div 
 
 -----------*/
+// Event listener, fill color
 optionsHeader.addEventListener("click", function() {
     var sidesDiv = document.querySelector(".sides");
     sidesDiv.classList.toggle("hidden");
+});
+
+// Loop through the fill inputs
+fillInputs.forEach((input, index) => {
+    input.value = player[index].fill;
+    outputDivs[index].innerHTML = player[index].fill;
+
+    input.addEventListener('input', (e) => {
+        player[index].fill = e.target.value;
+        player[index].pad.fill = player[index].fill;
+        outputDivs[index].innerHTML = player[index].fill;
+    });
 });
 /*---------
     Program the six key inputs to do the following:
